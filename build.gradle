@@ -1,0 +1,29 @@
+apply from: 'dependencies.gradle'
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+    }
+}
+
+ext {
+    androidCompileSdkVersion = 28
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

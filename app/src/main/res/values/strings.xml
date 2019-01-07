@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">VoiceTimer</string>
+    <string name="shared_preferences">com.leesc.voicetimer.sharedpreferences</string>
+    <string name="kakao_app_key">kakao_app_key</string>
+
+    <!-- 하단 네비게이션 -->
+    <string name="nav_title_alarm">알람</string>
+    <string name="nav_title_timer">타이머</string>
+    <string name="nav_title_stopwatch">스탑워치</string>
+
+
+
+</resources>

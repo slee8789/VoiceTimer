@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion androidCompileSdkVersion
+    defaultConfig {
+        applicationId "com.leesc.voicetimer"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    Map<String, String> dependencies = rootProject.ext.dependencies
+
+    //android
+    implementation dependencies.appCompat
+    implementation dependencies.design
+    implementation dependencies.constraintLayout
+
+    //reactive
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+
+    //network
+    implementation dependencies.retrofit
+    implementation dependencies.converterGson
+    implementation dependencies.adapterRxjava2
+
+    //architecture component
+    implementation dependencies.lifecycleExtension
+    implementation dependencies.lifecycleRuntime
+    annotationProcessor dependencies.lifecycleCompiler
+
+    //database
+    implementation dependencies.roomRxjava2
+    implementation dependencies.roomRuntime
+    annotationProcessor dependencies.roomCompiler
+
+    //memory leak
+    debugImplementation dependencies.leakcanaryAndroid
+    releaseImplementation dependencies.leakcanaryAndroidNoOp
+
+    //stetho
+    implementation dependencies.stetho
+
+    //stream
+    implementation dependencies.stream
+
+    //permission
+    implementation dependencies.tedPermission
+
+    //di
+    implementation dependencies.dagger
+    annotationProcessor dependencies.daggerCompiler
+    implementation dependencies.daggerAndroid
+    implementation dependencies.daggerAndroidSupport
+    annotationProcessor dependencies.daggerAndroidProccesor
+
+
+}
