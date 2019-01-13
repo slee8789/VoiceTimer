@@ -1,6 +1,6 @@
 package com.leesc.voicetimer.core;
 
-import com.leesc.voicetimer.di.DaggerAppComponent;
+import com.leesc.voicetimer.di.component.DaggerAppComponent;
 
 import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;

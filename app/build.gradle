@@ -80,5 +80,7 @@ dependencies {
     implementation dependencies.daggerAndroidSupport
     annotationProcessor dependencies.daggerAndroidProccesor
 
-
+    //view
+    implementation dependencies.circleView
+    implementation dependencies.test
 }

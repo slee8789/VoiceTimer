@@ -3,14 +3,17 @@
 
     <item
         android:id="@+id/nav_alarm"
+        android:icon="@drawable/timer"
         android:title="@string/nav_title_alarm" />
 
     <item
-        android:id="@+id/nav_timer"
-        android:title="@string/nav_title_timer" />
+        android:id="@+id/nav_stopwatch"
+        android:icon="@drawable/timer"
+        android:title="@string/nav_title_stopwatch" />
 
     <item
-        android:id="@+id/nav_stopwatch"
-        android:title="@string/nav_title_stopwatch" />
+        android:id="@+id/nav_timer"
+        android:icon="@drawable/timer"
+        android:title="@string/nav_title_timer" />
 
 </menu>

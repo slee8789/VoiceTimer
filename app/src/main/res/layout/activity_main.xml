@@ -13,10 +13,10 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.view.MainActivity">
+        tools:context=".ui.main.MainActivity">
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/main_container"
+            android:id="@+id/main_view_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/main_nav"
@@ -29,7 +29,9 @@
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/main_nav"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
+            android:background="@color/material_blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

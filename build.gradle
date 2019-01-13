@@ -13,7 +13,7 @@ buildscript {
 
 ext {
     androidCompileSdkVersion = 28
-    androidMinSdkVersion = 21
+    androidMinSdkVersion = 19
     androidTargetSdkVersion = 28
 }
 
@@ -21,6 +21,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 

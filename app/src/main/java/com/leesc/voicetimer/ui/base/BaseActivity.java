@@ -32,6 +32,8 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.leesc.voicetimer.utils.CommonUtils;
 
+import dagger.android.AndroidInjection;
+
 /**
  * Created by amitshekhar on 07/07/17.
  */
@@ -80,7 +82,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        performDependencyInjection();
+        performDependencyInjection();
         super.onCreate(savedInstanceState);
         performDataBinding();
     }
@@ -112,9 +114,9 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
     }
 
 
-//    public void performDependencyInjection() {
-//        AndroidInjection.inject(this);
-//    }
+    public void performDependencyInjection() {
+        AndroidInjection.inject(this);
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     public void requestPermissionsSafely(String[] permissions, int requestCode) {

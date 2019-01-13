@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -8,14 +7,15 @@
 
         <variable
             name="viewModel"
-            type="com.leesc.voicetimer.ui.main.timer.TimerViewModel" />
+            type="com.leesc.voicetimer.ui.splash.SplashViewModel" />
 
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#163536">
+        android:background="@drawable/gradient_splash"
+        tools:context=".ui.splash.SplashActivity">
 
     </android.support.constraint.ConstraintLayout>
 </layout>

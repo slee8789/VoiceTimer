@@ -1,12 +1,14 @@
-package com.leesc.voicetimer.ui.main;
+package com.leesc.voicetimer.ui.main.alarm;
 
 import com.leesc.voicetimer.data.DataManager;
 import com.leesc.voicetimer.ui.base.BaseViewModel;
 import com.leesc.voicetimer.utils.rx.SchedulerProvider;
 
-public class MainViewModel extends BaseViewModel<MainNavigator> {
+import javax.inject.Inject;
 
-    public MainViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
+public class AlarmViewModel extends BaseViewModel<AlarmNavigator> {
+
+    public AlarmViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
     }
 
