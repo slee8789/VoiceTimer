@@ -17,8 +17,10 @@
 package com.leesc.voicetimer.ui.main.stopwatch;
 
 import android.arch.lifecycle.ViewModelProvider;
+import android.content.Context;
 
 import com.leesc.voicetimer.data.DataManager;
+import com.leesc.voicetimer.di.ResourceProvider;
 import com.leesc.voicetimer.ui.main.alarm.AlarmViewModel;
 import com.leesc.voicetimer.utils.ViewModelProviderFactory;
 import com.leesc.voicetimer.utils.rx.SchedulerProvider;
@@ -33,8 +35,8 @@ import dagger.Provides;
 public class StopwatchFragmentModule {
 
     @Provides
-    StopwatchViewModel stopwatchViewModelProvider(DataManager dataManager, SchedulerProvider schedulerProvider) {
-        return new StopwatchViewModel(dataManager, schedulerProvider);
+    StopwatchViewModel stopwatchViewModelProvider(DataManager dataManager, SchedulerProvider schedulerProvider, Context context, ResourceProvider resourceProvider) {
+        return new StopwatchViewModel(dataManager, schedulerProvider, context, resourceProvider);
     }
 
     @Provides

@@ -80,6 +80,9 @@ dependencies {
     implementation dependencies.daggerAndroidSupport
     annotationProcessor dependencies.daggerAndroidProccesor
 
+    //kakao
+    implementation dependencies.newtone
+
     //view
     implementation dependencies.circleView
     implementation dependencies.test

@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">VoiceTimer</string>
     <string name="shared_preferences">com.leesc.voicetimer.sharedpreferences</string>
-    <string name="kakao_app_key">kakao_app_key</string>
+    <string name="kakao_app_key">7f27cbbd8bb573367630294b54e2c3ce</string>
 
     <!-- 하단 네비게이션 -->
     <string name="nav_title_alarm">알람</string>
     <string name="nav_title_timer">타이머</string>
     <string name="nav_title_stopwatch">스탑워치</string>
 
-
+    <!-- 스탑워치 -->
+    <string name="stopwatch_msg_denied">이 서비스를 사용하기 위해서 권한이 필요합니다.</string>
+    <string name="stopwatch_msg_goto_setting">설정하러 가기</string>
 
 </resources>

@@ -2,10 +2,14 @@ package com.leesc.voicetimer.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Base64;
 import android.util.Log;
 
 import com.leesc.voicetimer.BR;
@@ -13,11 +17,16 @@ import com.leesc.voicetimer.R;
 import com.leesc.voicetimer.databinding.ActivityMainBinding;
 import com.leesc.voicetimer.ui.base.BaseActivity;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
+
+import static com.kakao.util.helper.Utility.getPackageInfo;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> implements MainNavigator, HasSupportFragmentInjector {
 
@@ -63,8 +72,27 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         activityMainBinding = getViewDataBinding();
         mainViewModel.setNavigator(this);
         initViews();
-
+        Log.d("lsc","dfdf " + getKeyHash(this));
     }
+
+    public static String getKeyHash(final Context context) {
+        PackageInfo packageInfo = getPackageInfo(context, PackageManager.GET_SIGNATURES);
+        if (packageInfo == null)
+            return null;
+
+        for (Signature signature : packageInfo.signatures) {
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                return Base64.encodeToString(md.digest(), Base64.NO_WRAP);
+            } catch (NoSuchAlgorithmException e) {
+                Log.w("lsc", "Unable to get MessageDigest. signature=" + signature, e);
+            }
+        }
+        return null;
+    }
+
+
 
     @Override
     public void handleError(Throwable throwable) {
