@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">VoiceTimer</string>
     <string name="shared_preferences">com.leesc.voicetimer.sharedpreferences</string>
-    <string name="kakao_app_key">7f27cbbd8bb573367630294b54e2c3ce</string>
 
     <!-- 하단 네비게이션 -->
     <string name="nav_title_alarm">알람</string>
