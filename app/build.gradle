@@ -53,6 +53,7 @@ dependencies {
     //architecture component
     implementation dependencies.lifecycleExtension
     implementation dependencies.lifecycleRuntime
+    implementation 'com.android.support:support-v4:28.0.0-rc02'
     annotationProcessor dependencies.lifecycleCompiler
 
     //database
@@ -79,6 +80,10 @@ dependencies {
     implementation dependencies.daggerAndroid
     implementation dependencies.daggerAndroidSupport
     annotationProcessor dependencies.daggerAndroidProccesor
+
+    //navigationGraph
+    implementation dependencies.navigationFragment
+    implementation dependencies.navigationUi
 
     //view
     implementation dependencies.circleView
